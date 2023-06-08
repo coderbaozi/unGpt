@@ -17,8 +17,8 @@ dependencies:
     specifier: ^6.12.0
     version: 6.12.0(react-dom@18.2.0)(react@18.2.0)
   vite-plugin-icon:
-    specifier: 1.0.1-beta.3
-    version: 1.0.1-beta.3(vite@4.3.9)
+    specifier: 1.0.1-beta.4
+    version: 1.0.1-beta.4(vite@4.3.9)
 
 devDependencies:
   '@antfu/eslint-config':
@@ -3352,8 +3352,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-icon@1.0.1-beta.3(vite@4.3.9):
-    resolution: {integrity: sha512-WCVB/6eGiun51dRWLqKOo2xE5qm0MAj4hUcdqeu+6kJ46Vl03FCZ2hcZMvCnmjFHmsSO6K49Hi+ICCyIyCc8xQ==}
+  /vite-plugin-icon@1.0.1-beta.4(vite@4.3.9):
+    resolution: {integrity: sha512-2+aAQPlhQVoVvDm5mH2q/3LG28tmkOa/0dSCH+h5K/SieBohRJkO+3SQMnrN66fpuDT+DkhjVEhnYKaiXY5g5g==}
     peerDependencies:
       vite: ^4.2.1
     dependencies:
