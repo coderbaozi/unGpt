@@ -6,7 +6,7 @@ interface IProps {
   children?: ReactNode
 }
 const ChatBar: React.FC<IProps> = ({ children }) => {
-  return <div className='h-screen w-[200px] border border-orange-400'>
+  return <div className='h-screen w-[200px] border'>
     <div className='flex items-center p-2 text-center items-center'>
         <div className='w-6 h-6'>
           <UnGpt></UnGpt>

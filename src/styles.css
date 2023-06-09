@@ -82,3 +82,13 @@ button {
     background-color: #0f0f0f69;
   }
 }
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
