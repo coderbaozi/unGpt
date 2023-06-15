@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import type { ReactNode } from 'react'
-import { http } from '@tauri-apps/api'
+import { chat } from '../serve/api/api'
+import type { MessageType } from '../types'
 import Input from './Input'
 import VirtualChat from './VirtualChat'
 
@@ -9,27 +10,26 @@ interface IProps {
 }
 
 const Message: React.FC<IProps> = () => {
-  const [sendHistory, setSendHistory] = useState<string[]>([])
-  const [data, setData] = useState<any>()
-  useEffect(() => {
-    http.fetch('https://dog.ceo/api/breeds/image/random', {
-      method: 'GET',
-    }).then((res) => {
-      setData(JSON.stringify(res.data))
-    })
-  }, [])
+  const [messageHistory, setMessageHistory] = useState<MessageType[]>([])
+  const [loading, setLoading] = useState<boolean>(false)
+  async function handleReceiveMessage(question: string) {
+    setLoading(() => !loading)
+    const { claude: receiveMessage } = await chat(question)
+    setLoading(false)
+    setMessageHistory(history => [...history, { type: 1, msg: receiveMessage }])
+  }
   function handleInputText(content: string) {
-    setSendHistory(history => [...history, content])
+    setMessageHistory(history => [...history, { type: 0, msg: content }])
+    handleReceiveMessage(content)
     return content
   }
   return (
     <main className='h-full flex flex-col'>
-      <p>{data}</p>
       <div className='w-full p-2 flex-1'>
         {/* {虚拟列表} */}
-        <VirtualChat sendHistory={sendHistory}></VirtualChat>
+        <VirtualChat messageHistory={messageHistory}></VirtualChat>
       </div>
-      <Input handleInputText={handleInputText}></Input>
+      <Input loading={loading} handleInputText={handleInputText}></Input>
     </main>
   )
 }

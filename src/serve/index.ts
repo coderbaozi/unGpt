@@ -1,5 +1,8 @@
 import Asker from './Asker'
 
 const asker = new Asker({
-  baseURL: 'https://edgeservices.bing.com/edgediscover/query',
+  baseURL: 'http://127.0.0.1:8088/',
+  timeout: 100000,
 })
+
+export default asker

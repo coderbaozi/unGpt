@@ -6,10 +6,13 @@ class Asker {
   instance: AxiosInstance
   constructor(config: AxiosRequestConfig) {
     this.instance = axios.create({ ...config, adapter: axiosTauriApiAdapter })
+    this.instance.interceptors.response.use((res) => {
+      return res.data
+    })
   }
 
   request(config: AxiosRequestConfig) {
-    return new Promise((resolve, reject) => {
+    return new Promise<any>((resolve, reject) => {
       this.instance
         .request(config)
         .then((response) => {
