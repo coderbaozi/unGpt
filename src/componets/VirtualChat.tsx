@@ -9,8 +9,8 @@ interface IProps {
   messageHistory?: MessageType[]
 }
 const VirtualChat: React.FC<IProps> = ({ messageHistory }) => {
-  return <div>
-    <div className=''>
+  return <div className='h-full'>
+    <div className='px-2 h-118 overflow-y-auto'>
       {
         messageHistory?.map(history =>
           history.type === 0

@@ -15,10 +15,10 @@ const Input: React.FC<IProps> = ({ loading, handleInputText: emitInputText }) =>
       textRef.current!.value = ''
     }
   }
-  return <div>
-    <textarea disabled={loading} ref={textRef} onKeyDown={handleKeyDown}
+  return <div className='border border-gray-200'>
+    <textarea ref={textRef} onKeyDown={handleKeyDown}
       placeholder='talk to me'
-      className='outline outline-gray-200 p-3 w-full h-30'>
+      className='p-3 w-full h-30'>
      </textarea>
   </div>
 }

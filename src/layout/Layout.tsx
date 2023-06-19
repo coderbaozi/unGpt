@@ -11,10 +11,10 @@ const Layout: React.FC<IProps> = ({ children, messageSlot }) => {
     <div>
       <main className='flex'>
         <nav>
-        {children}
+          {children}
         </nav>
         <div className='flex-1'>
-        {messageSlot}
+          {messageSlot}
         </div>
       </main>
     </div>

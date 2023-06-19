@@ -25,7 +25,7 @@ const Message: React.FC<IProps> = () => {
   }
   return (
     <main className='h-full flex flex-col'>
-      <div className='w-full p-2 flex-1'>
+      <div className='w-full flex-1'>
         {/* {虚拟列表} */}
         <VirtualChat messageHistory={messageHistory}></VirtualChat>
       </div>

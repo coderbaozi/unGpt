@@ -10,9 +10,6 @@ function Home() {
   function handleAddConversion() {
     setChatHistory(old => [...old, { uid: '1', chatName: 'chat1' }])
   }
-  function handleData(data: any) {
-    return JSON.stringify(data)
-  }
   return (
     <>
     <Layout messageSlot={<Message/>}>
